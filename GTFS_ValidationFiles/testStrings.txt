@@ -1,0 +1,79 @@
+2CC3C88B6A
+C242B87D82
+
+
+Stops header valid:
+String validStop = "stop_id,stop_name,stop_desc,stop_lat,stop_lon"
+Stops header invalid:
+stop_id ,stop_name,stop_desc,stop_lat,stop_lon
+stop_i,stop_name,stop_desc,stop_lat,stop_lon
+stop_idstop_name,stop_desc,stop_lat,stop_lon
+
+Stops data valid:
+3F56F87E65,"Transfer Center",,44.810060,-91.497640
+3F56F87E65,"Transfer Center","",44.810060,-91.497640
+3F56F87E65,"Transfer, Center",,44.810060,-91.497640
+3F56F87E65,Transfer Center,,44.810060,-91.497640
+3F56F87E65,Transfer Center,,90.0,-180.0
+Stops data invalid:
+,A,,90.0,-180.0
+A,,,90.0,-180.0
+A,B,,,-180.0
+A,B,,90,
+A,B,,90,180,
+A,B,,90..,180,
+A,B,,90..,180..,
+A,B,,90.1,180.0
+A,B,,89.0,-180.01
+
+Trips header valid:
+route_id,service_id,trip_id,trip_headsign,direction_id,block_id,shape_id
+
+Trips data valid:
+A,,A,,,,
+"A ,",,A,,,,
+A,A,A,A,A,A,A
+Trips data invalid:
+,,A,,,,
+A,,,,,,
+A,,A,,,
+A,,A,,,,,
+
+Stop_times header valid:
+trip_id,arrival_time,departure_time,stop_id,stop_sequence,stop_headsign,pickup_type,drop_off_type
+
+Stop_times data valid:
+A,07:15:00,07:15:00,A,0,,,
+A,00:00:01,07:15:00,A,0,,,
+A,00:00:01,07:15:00,A,0,,,
+A,13:00:01,07:15:00,A,0,,,
+A,24:00:01,07:15:00,A,0,,,
+Stop_times data invalid:
+,00:00:01,07:15:00,A,0,,,
+A,,07:15:00,A,0,,,
+A,00:00:01,,A,0,,,
+A,00:00:01,07:15:00,,0,,,
+A,00:00:01,07:15:00,A,,,,
+A,-00:00:01,07:15:00,A,0,,,
+A,100:00:01,07:15:00,A,0,,,
+A,00:100:01,07:15:00,A,0,,,
+A,00:00:101,07:15:00,A,0,,,
+A,00:00:01,07:15:00,A,A,,,
+A,00:00:01,07:15:00,A,-1,,,
+A,00:00:01,07:15:00,A,0.1,,,
+
+Routes header valid:
+route_id,agency_id,route_short_name,route_long_name,route_desc,route_type,route_url,route_color,route_text_color
+
+Routes data valid:
+A,,,,,,,008345,
+A,,,,,,,FFFFFF,
+Routes data invalid:
+A,,,,,,,008345,
+,,,,,,,008345,
+A,,,,,,,,
+A,,,,,,,008345
+A,,,,,,,008345,,
+A,,,,,,,-008345,
+A,,,,,,,008345F,
+A,,,,,,,0083452,
